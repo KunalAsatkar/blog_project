@@ -1,0 +1,34 @@
+<!-- to include file from different folder
+make sure to give space between - include
+-->
+<%- include('partials/header') -%>
+
+    <!-- this code uses a single object which good but does not give clear
+understanding so we will use two objects -->
+    <!-- <% arr.forEach(function(data){%>
+         this is alternative of the for loop 
+        <h1>
+            <%=data.title%>
+        </h1>
+        <p>
+            <%=data.content%>
+        </p>
+        <%})%> -->
+
+    <h1>home</h1>
+    <p>
+        <%=homeInfo%>
+    </p>
+    <% arr.forEach(function(data){%>
+        <h1>
+            <%=data.title%>
+        </h1>
+        <span>
+            <%=(data.content).substring(0,100)+" ..."%>
+        </span>
+        <a href="/post/<%=data.title%>">read more</a>
+
+        <%})%>
+            <!-- <form action="post/" method=""></form> -->
+
+            <%- include('partials/footer') -%>
